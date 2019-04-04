@@ -1,0 +1,39 @@
+body{font-family:arial,serif,gotham;font-size:12px;margin:0;padding:0;background:white}
+
+p,h1,h2,ul,li{margin:0;padding:0;}
+
+.heading{text-align:center;padding-bottom:10px}
+
+.registerSuccessClass{display:none;color:green;font-size:16px}
+
+#closeRegImage{position:absolute;cursor:pointer;left:384px;top:-18px;border-radius:22px}
+/*form css strats here*/
+.formDiv{z-index:1001;width:400px;margin:auto;padding:5px;background:gainsboro;position:fixed;top:0;left:0;right:0;bottom:0;height:568px;border-radius: 15px;display:none}
+
+.formDiv1{z-index:1001;width:400px;margin:auto;padding:5px;background:gainsboro;position:fixed;top:0;left:0;right:0;bottom:0;height:568px;border-radius: 15px;display:none}
+
+.commonInput{width:388px;padding:5px;margin:0px 0 5px 0;display:inline-block;border:1px solid green;outline:none;background: #ffffff;}
+
+i{color:red}
+
+p{display:inline-block;float:right;font-size:12px}
+
+.clear{clear:both}
+
+.genderDiv{display:inline-block;width: 388px;background:#f1f1f1;padding:5px;margin:1px 0 1px 0;border:1px solid green;}
+
+.hobbyDiv{display:inline-block;width: 388px;background:#f1f1f1;padding:5px;margin:1px 0 1px 0;border:1px solid green;}
+
+.genderClass{margin-right:30px}
+/*address textarea*/
+ .regtextarea{width: 388px;background:#f1f1f1;padding:5px;margin:1px 0 1px 0;height:40px;border:1px solid green;resize:none}
+
+.cityClass{width: 400px;background:#f1f1f1;padding:5px;margin:1px 0 1px 0;border:1px solid green;}
+
+.submitButton{background-color:#4CAF50;color:white;padding:5px 0px;margin: 5px 0;border:none;cursor:pointer;width:100%;opacity:0.9;border-radius:10px}
+
+.submitButton:hover{background-color:#175a1a}
+
+.resetButton{background-color:deepskyblue;color:white;padding:5px 0px;border:none;cursor:pointer;width:100%;opacity:0.9;border-radius:10px}
+
+.resetButton:hover{background-color:#0196c7}

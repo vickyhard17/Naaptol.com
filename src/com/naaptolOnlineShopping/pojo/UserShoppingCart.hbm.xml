@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+
+	<class name="com.naaptolOnlineShopping.pojo.UserShoppingCart" table="ntUserShoppingCart">
+	
+		<id name="cartId" column="pkCartId">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="quantity" column="quantity"></property>
+		<property name="userId" column="userId"></property>
+		<property name="isAdded" column="isAdded"></property>
+		<property name="color" column="color"></property>
+		<property name="size" column="size"></property>
+		<property name="sellerDetailsId" column="sellerDetailsId"></property>
+		<property name="productId" column="fkproductId"></property>
+		
+		<property name="isActive" column="is_active"></property>
+		<property name="createdDate" column="created_date"></property>
+		<property name="createdBy" column="created_by"></property>
+		<property name="modifiedDate" column="modified_date"></property>
+		<property name="modifiedBy" column="modified_by"></property>
+		
+		<many-to-one name="productInfo" column="fkproductId"  insert="false" update="false" class="com.naaptolOnlineShopping.pojo.ProductInfo"></many-to-one> 
+		
+	</class>
+
+</hibernate-mapping>

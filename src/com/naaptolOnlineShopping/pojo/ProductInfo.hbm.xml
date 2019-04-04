@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+
+	<class name="com.naaptolOnlineShopping.pojo.ProductInfo" table="ntProductInfo">
+	
+		<id name="productId" column="pkProductId">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="productName" column="prodName"></property>
+		<property name="productPrice" column="prodPrice"></property>
+		<property name="productImage" column="prodImage"></property>
+		<property name="description" column="description"></property>
+		<property name="isAvailable" column="isAvailable"></property>
+		<property name="isActive" column="is_active"></property>
+		<property name="createdDate" column="created_date"></property>
+		<property name="createdBy" column="created_by"></property>
+		<property name="modifiedDate" column="modified_date"></property>
+		<property name="modifiedBy" column="modified_by"></property>
+		
+		<set name="sellerDetails" table="ntSellerDetails" cascade="all">
+			<key column="fkProductId"></key>
+			<one-to-many class="com.naaptolOnlineShopping.pojo.SellerDetails"></one-to-many>
+		</set>
+		<many-to-one name="subcategory" column="fkSubcategoryId" class="com.naaptolOnlineShopping.pojo.Subcategory"></many-to-one>
+		
+	
+		<set name="userShoppingCart" table="ntUserShoppingCart" cascade="all">
+			<key column="fkproductId"></key>
+			<one-to-many class="com.naaptolOnlineShopping.pojo.UserShoppingCart"></one-to-many>
+		</set>
+	
+	</class>
+
+</hibernate-mapping>

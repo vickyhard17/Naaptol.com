@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+
+	<class name="com.naaptolOnlineShopping.pojo.UserInfo" table="ntUserInfo">
+	
+		<id name="userId" column="pkUserId">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="firstName" column="firstName"></property>
+		<property name="lastName" column="lastName"></property>
+		<property name="email" column="email"></property>
+		<property name="gender" column="gender"></property>
+		<property name="contactNumber" column="contactNumber"></property>
+		<property name="address" column="address"></property>
+		<property name="pincode" column="pincode"></property>
+		<property name="password" column="password"></property>
+		<property name="isAdmin" column="is_admin"></property>
+		<property name="image" column="image"></property>
+		<property name="isActive" column="is_active"></property>
+		<property name="createdDate" column="created_date"></property>
+		<property name="createdBy" column="created_by"></property>
+		<property name="modifiedDate" column="modified_date"></property>
+		<property name="modifiedBy" column="modified_by"></property>
+		
+		<set name="userShippingAddress" table="ntUserShippingAddress" cascade="all">
+			<key column="fkUserId"></key>
+			<one-to-many class="com.naaptolOnlineShopping.pojo.UserShippingAddress"></one-to-many>
+		</set>
+		
+		<set name="orderDetails" table="ntOrderDetails" cascade="all">
+			<key column="fkUserId"></key>
+			<one-to-many class="com.naaptolOnlineShopping.pojo.OrderDetails"></one-to-many>
+		</set>
+		
+		
+	</class>
+
+</hibernate-mapping>

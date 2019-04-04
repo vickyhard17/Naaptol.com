@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+
+	<class name="com.naaptolOnlineShopping.pojo.SellerInfo" table="ntSellerInfo">
+	
+		<id name="sellerId" column="pkSellerId">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="sellerName" column="sellerName"></property>
+		<property name="contactNumber" column="contactNumber"></property>
+		
+		<property name="isActive" column="is_active"></property>
+		<property name="createdDate" column="created_date"></property>
+		
+		<property name="createdBy" column="created_by"></property>
+		<property name="modifiedDate" column="modified_date"></property>
+		<property name="modifiedBy" column="modified_by"></property>
+		
+		<set name="sellerDetails" table="ntSellerDetails" cascade="all">
+			<key column="fkSellerInfoId"></key>
+			<one-to-many class="com.naaptolOnlineShopping.pojo.SellerDetails"></one-to-many>
+		</set>
+	</class>
+
+</hibernate-mapping>

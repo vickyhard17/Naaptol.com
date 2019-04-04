@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+
+	<class name="com.naaptolOnlineShopping.pojo.OrderDetails" table="ntOrderDetails">
+	
+		<id name="orderId" column="pkOrderid">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="userId" column="fkUserId"></property>
+		<property name="sellerDetailsId" column="fkSellerDetailsId"></property>
+		<property name="firstName" column="firstName"></property>
+		<property name="lastName" column="lastName"></property>
+		<property name="address" column="address"></property>
+		<property name="landmark" column="landmark"></property>
+		<property name="pincode" column="pincode"></property>
+		<property name="contactNumber" column="contactNumber"></property>
+		
+		<property name="orderAmount" column="orderAmount"></property>
+		<property name="orderDate" column="orderDate"></property>
+		<property name="paymentType" column="paymentType"></property>
+		
+		<property name="isActive" column="is_active"></property>
+		<property name="createdDate" column="created_date"></property>
+		<property name="createdBy" column="created_by"></property>
+		<property name="modifiedDate" column="modified_date"></property>
+		<property name="modifiedBy" column="modified_by"></property>
+		
+		<many-to-one name="userInfo" column="fkUserId" insert="false" update="false" class="com.naaptolOnlineShopping.pojo.UserInfo"></many-to-one>
+		<many-to-one name="sellerDetail" column="fkSellerDetailsId" insert="false" update="false" class="com.naaptolOnlineShopping.pojo.SellerDetails"></many-to-one>
+		
+	</class>
+
+</hibernate-mapping>
